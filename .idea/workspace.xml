@@ -69,8 +69,8 @@
       <file leaf-file-name="text_helpers.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/prawn/extra_helpers/text_helpers.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="459">
+              <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -119,8 +119,8 @@
       <file leaf-file-name="dynamic_repeater_helpers.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/prawn/extra_helpers/dynamic_repeater_helpers.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="876">
-              <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -174,9 +174,9 @@
         <option value="$PROJECT_DIR$/prawn-extra_helpers.gemspec" />
         <option value="$PROJECT_DIR$/lib/prawn/extra_helpers/box_helpers.rb" />
         <option value="$PROJECT_DIR$/lib/prawn/extra_helpers/grid_helpers.rb" />
-        <option value="$PROJECT_DIR$/lib/prawn/extra_helpers/dynamic_repeater_helpers.rb" />
         <option value="$PROJECT_DIR$/lib/prawn/extra_helpers.rb" />
         <option value="$PROJECT_DIR$/lib/prawn/extra_helpers/text_helpers.rb" />
+        <option value="$PROJECT_DIR$/lib/prawn/extra_helpers/dynamic_repeater_helpers.rb" />
       </list>
     </option>
   </component>
@@ -336,32 +336,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="prawn-extra_helpers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="prawn-extra_helpers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helpers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="prawn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="extra_helpers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -492,12 +466,12 @@
       <option name="presentableId" value="Default" />
       <updated>1481221135274</updated>
       <workItem from="1481221139892" duration="327000" />
-      <workItem from="1481221996812" duration="4065000" />
+      <workItem from="1481221996812" duration="5916000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4392000" />
+    <option name="totallyTimeSpent" value="6243000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="57" y="-4" width="1863" height="1084" extended-state="6" />
@@ -634,22 +608,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/prawn/extra_helpers/grid_helpers.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="910">
-          <caret line="93" column="56" selection-start-line="93" selection-start-column="56" selection-end-line="93" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/prawn/extra_helpers/dynamic_repeater_helpers.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="876">
-          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/prawn/extra_helpers.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -690,10 +648,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/prawn/extra_helpers/text_helpers.rb">
+    <entry file="file://$PROJECT_DIR$/lib/prawn/extra_helpers/dynamic_repeater_helpers.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/prawn/extra_helpers/grid_helpers.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="910">
+          <caret line="93" column="56" selection-start-line="93" selection-start-column="56" selection-end-line="93" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/prawn/extra_helpers/text_helpers.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
           <folding />
         </state>
       </provider>
