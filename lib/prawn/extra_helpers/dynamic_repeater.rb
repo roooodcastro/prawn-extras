@@ -28,7 +28,7 @@ module Prawn
     # end
     #
     # ==========================================================================
-    module DynamicRepeaterHelpers
+    module DynamicRepeater
       # Saves a named value for a specific page of the generated PDF. This will
       # save the value for the specified page down to the first page of the
       # document (page 1), or until there's already another value saved for a
