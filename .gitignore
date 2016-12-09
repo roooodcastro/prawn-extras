@@ -10,3 +10,4 @@ spec/dummy/tmp/
 **.orig
 .byebug_history
 .idea/
+*.gem
