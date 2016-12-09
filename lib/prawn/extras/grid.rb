@@ -1,5 +1,5 @@
 module Prawn
-  module ExtraHelpers
+  module Extras
     # Módulo para gerar um grid de células de tamanhos definidos. Parecido com uma
     # tabela HTML, mas com maior facilidade e flexibilidade para fazer colspans.
 
@@ -85,4 +85,4 @@ module Prawn
   end
 end
 
-Prawn::Document.include Prawn::ExtraHelpers::Grid
+Prawn::Document.include Prawn::Extras::Grid

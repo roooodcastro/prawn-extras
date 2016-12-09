@@ -11,7 +11,7 @@ require 'action_cable/engine'
 require 'sprockets/railtie'
 
 Bundler.require(*Rails.groups)
-require 'prawn/extra_helpers'
+require 'prawn/extras'
 
 module Dummy
   class Application < Rails::Application

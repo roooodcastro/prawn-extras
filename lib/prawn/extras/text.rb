@@ -1,5 +1,5 @@
 module Prawn
-  module ExtraHelpers
+  module Extras
     module Text
       # Changes the font family, style, size and leading. When a block is used,
       # the font is applied transactionally and is rolled back when the block
@@ -124,4 +124,4 @@ module Prawn
   end
 end
 
-Prawn::Document.include Prawn::ExtraHelpers::Text
+Prawn::Document.include Prawn::Extras::Text

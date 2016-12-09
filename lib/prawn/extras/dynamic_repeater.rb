@@ -1,5 +1,5 @@
 module Prawn
-  module ExtraHelpers
+  module Extras
     # ==============================================================================
     #
     # Esse módulo contém helpers para facilitar a inserção de conteúdo dinâmico
@@ -84,4 +84,4 @@ module Prawn
   end
 end
 
-Prawn::Document.include Prawn::ExtraHelpers::DynamicRepeater
+Prawn::Document.include Prawn::Extras::DynamicRepeater

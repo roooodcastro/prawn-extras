@@ -1,14 +1,16 @@
-# Prawn::ExtraHelpers
+# Prawn::Extras
 Short description and motivation.
 
 ## Usage
-How to use my plugin.
+Just install it and all extra stuff below will be available!
+
+TODO: List all the great extra stuff I just mentioned
 
 ## Installation
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'prawn-extra_helpers'
+gem 'prawn-extras'
 ```
 
 And then execute:
@@ -18,11 +20,13 @@ $ bundle
 
 Or install it yourself as:
 ```bash
-$ gem install prawn-extra_helpers
+$ gem install prawn-extras
 ```
 
 ## Contributing
-Contribution directions go here.
+All contributions are welcome, please raise an issue for any problems or
+suggestions.
 
 ## License
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the
+[MIT License](http://opensource.org/licenses/MIT).

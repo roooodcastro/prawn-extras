@@ -1,5 +1,5 @@
 module Prawn
-  module ExtraHelpers
+  module Extras
     module Box
       delegate :top_left, :width, :height, to: :bounds
 
@@ -173,4 +173,4 @@ module Prawn
   end
 end
 
-Prawn::Document.include Prawn::ExtraHelpers::Box
+Prawn::Document.include Prawn::Extras::Box

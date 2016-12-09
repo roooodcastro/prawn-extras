@@ -1,12 +1,12 @@
 $LOAD_PATH.push File.expand_path('../lib', __FILE__)
 
 # Maintain your gem's version:
-require 'prawn/extra_helpers/version'
+require 'prawn/extras/version'
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = 'prawn-extra_helpers'
-  s.version     = Prawn::ExtraHelpers::VERSION
+  s.name        = 'prawn-extras'
+  s.version     = Prawn::Extras::VERSION
   s.authors     = ['Rodrigo Castro']
   s.email       = ['rod.c.azevedo@gmail.com']
   s.homepage    = 'https://github.com/roooodcastro/prawn-extras'
