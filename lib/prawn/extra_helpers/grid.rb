@@ -79,7 +79,7 @@ module Prawn
       protected
 
       def build_grid_options(columns, rows, options)
-        options.merge({ columns: columns, rows: rows })
+        options.merge(columns: columns, rows: rows)
       end
     end
   end

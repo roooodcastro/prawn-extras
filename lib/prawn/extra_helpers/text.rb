@@ -19,7 +19,7 @@ module Prawn
       # font styles to their respective font files. See font_families for
       # more information.
       #
-      def set_font(options)
+      def switch_font(options)
         return font_and_leading(options) unless block_given?
         save_leading { font_and_leading(options) { yield } }
       end
@@ -27,19 +27,19 @@ module Prawn
       # Sets the font to the same as before, but removing italic or bold style.
       # All options from set_font may also be used here.
       def regular_font(options = {}, &block)
-        fonte(options.merge({ style: :normal }), &block)
+        switch_font(options.merge(style: :normal), &block)
       end
 
       # Sets the font to the same as before, but applying the bold style.
       # All options from set_font may also be used here.
       def bold_font(options = {}, &block)
-        fonte(options.merge({ style: :bold }), &block)
+        switch_font(options.merge(style: :bold), &block)
       end
 
       # Sets the font to the same as before, but applying the italic style.
       # All options from set_font may also be used here.
       def italic_font(options = {}, &block)
-        fonte(options.merge({ style: :italic }), &block)
+        switch_font(options.merge(style: :italic), &block)
       end
 
       # Transactionally changes the fill color, rolling back the previous color

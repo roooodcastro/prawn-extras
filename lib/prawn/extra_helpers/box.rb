@@ -163,7 +163,7 @@ module Prawn
       end
 
       def sum_dimensions(dim_a, dim_b)
-        [dim_a, dim_b].transpose.map {|x| x.reduce(:+)}
+        [dim_a, dim_b].transpose.map { |x| x.reduce(:+) }
       end
 
       def build_size_options(position, width, height)
