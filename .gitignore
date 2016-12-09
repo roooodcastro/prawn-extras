@@ -9,3 +9,4 @@ spec/dummy/tmp/
 /coverage/
 **.orig
 .byebug_history
+.idea/

@@ -1,6 +1,6 @@
 module Prawn
   module ExtraHelpers
-    module TextHelpers
+    module Text
       # Changes the font family, style, size and leading. When a block is used,
       # the font is applied transactionally and is rolled back when the block
       # exits.
@@ -109,8 +109,9 @@ module Prawn
 
       protected
 
-      def save_leading
+      def save_leading(new_leading = nil)
         leading = default_leading
+        default_leading(new_leading) if new_leading.present?
         yield
         default_leading(leading)
       end
@@ -123,4 +124,4 @@ module Prawn
   end
 end
 
-Prawn::Document.include Prawn::ExtraHelpers::TextHelpers
+Prawn::Document.include Prawn::ExtraHelpers::Text

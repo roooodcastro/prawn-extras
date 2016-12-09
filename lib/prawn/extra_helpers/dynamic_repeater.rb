@@ -36,16 +36,16 @@ module Prawn
       #
       # Example:
       #
-      # save_repeater_value(:name, 'John', 3)
+      # store_value_in_page(:name, 'John', 3)
       #
       # This will save the value "John" at the :name key for the pages 1, 2
       # and 3. Any subsequent calls to this method (for the same key) will not
       # override these values.
       #
-      def save_repeater_value(key, value, current_page)
-        current_page.downto(1).each do |page|
-          next if repeater_values(key).keys.include?[page]
-          repeater_values(key)[page] = value
+      def store_value_in_page(key, value, page = page_number)
+        page.downto(1).each do |page_index|
+          next if repeater_values(key).keys.include?[page_index]
+          repeater_values(key)[page_index] = value
         end
       end
 
@@ -57,15 +57,15 @@ module Prawn
       # save_repeater_value(:name, 'John', 3)
       # save_repeater_value(:name, 'Jane', 5)
       #
-      # get_repeater_value(:name, 1) => "John"
-      # get_repeater_value(:name, 2) => "John"
-      # get_repeater_value(:name, 3) => "John"
-      # get_repeater_value(:name, 4) => "Jane"
-      # get_repeater_value(:name, 5) => "Jane"
-      # get_repeater_value(:name, 6) => "Jane"
-      # get_repeater_value(:name, -1) => ""
+      # value_in_page(:name, 1) => "John"
+      # value_in_page(:name, 2) => "John"
+      # value_in_page(:name, 3) => "John"
+      # value_in_page(:name, 4) => "Jane"
+      # value_in_page(:name, 5) => "Jane"
+      # value_in_page(:name, 6) => "Jane"
+      # value_in_page(:name, -1) => ""
       #
-      def get_repeater_value(key, page, default_value = '')
+      def value_in_page(key, page, default_value = '')
         repeater_values(key)[[page, max_index(key).min]] || default_value
       end
 
@@ -84,4 +84,4 @@ module Prawn
   end
 end
 
-Prawn::Document.include Prawn::ExtraHelpers::DynamicRepeaterHelpers
+Prawn::Document.include Prawn::ExtraHelpers::DynamicRepeater

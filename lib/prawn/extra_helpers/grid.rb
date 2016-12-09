@@ -51,44 +51,38 @@ module Prawn
     #          anterior quando o grid terminar de ser definido.
     # Gutter:  O espaço entre as células, em pts. Funciona como o cellspacing da tag
     #          <table> do HTML.
-    module GridHelpers
-      include TextHelpers
-      include BoxHelpers
+    module Grid
+      include Text
+      include Box
 
-      def gerar_grid(num_cols, num_linhas, opcoes = {})
-        opcoes = opcoes_grid(opcoes)
-        padding(opcoes[:padding]) do
-          define_grid(columns: num_cols, rows: num_linhas, gutter: opcoes[:gutter])
-          salvando_leading(opcoes[:leading]) { yield }
+      def define_grid_block(columns, rows, options = {})
+        options = build_grid_options(columns, rows, options)
+        padding(options.delete(:padding)) do
+          leading = options.delete(:leading)
+          define_grid(options)
+          save_leading(leading) { yield }
         end
       end
 
-      def campo_grid(linha, colunas)
-        colunas = [colunas] * 2 unless colunas.is_a? Array
-        grid([linha, colunas[0]], [linha, colunas[1]]).bounding_box { yield }
+      def grid_cell(row, columns)
+        columns = [columns] * 2 unless columns.is_a? Array
+        grid([row, columns[0]], [row, columns[1]]).bounding_box { yield }
       end
 
-      def texto_grid(linha, colunas, label, texto)
-        campo_grid(linha, colunas) { texto_com_titulo(label, texto.to_s) }
+      def text_grid_cell(row, columns, label_or_text, text = nil)
+        grid_cell(row, columns) do
+          titled_text(label_or_text, text) if text
+          text_box(label_or_text) unless text
+        end
       end
 
       protected
 
-      def opcoes_grid(opcoes)
-        # Gutter é o espaçamento entre células, tipo o cellspacing do HTML
-        # Padding é o padding do grid como um todo
-        { leading: opcoes[:leading] || default_leading,
-          padding: opcoes[:padding] || 0, gutter: opcoes[:gutter] || 0 }
-      end
-
-      def salvando_leading(leading)
-        old_leading = default_leading
-        default_leading(leading)
-        yield
-        default_leading(old_leading)
+      def build_grid_options(columns, rows, options)
+        options.merge({ columns: columns, rows: rows })
       end
     end
   end
 end
 
-Prawn::Document.include Prawn::ExtraHelpers::GridHelpers
+Prawn::Document.include Prawn::ExtraHelpers::Grid
