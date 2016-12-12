@@ -44,7 +44,7 @@ module Prawn
       #
       def store_value_in_page(key, value, page = page_number)
         page.downto(1).each do |page_index|
-          next if repeater_values(key).keys.include?[page_index]
+          next if repeater_values(key).keys.include?(page_index)
           repeater_values(key)[page_index] = value
         end
       end
@@ -66,7 +66,7 @@ module Prawn
       # value_in_page(:name, -1) => ""
       #
       def value_in_page(key, page, default_value = '')
-        repeater_values(key)[[page, max_index(key).min]] || default_value
+        repeater_values(key)[[page, max_index(key)].min] || default_value
       end
 
       private
