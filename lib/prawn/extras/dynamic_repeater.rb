@@ -30,9 +30,8 @@ module Prawn
     # ==========================================================================
     module DynamicRepeater
       # Saves a named value for a specific page of the generated PDF. This will
-      # save the value for the specified page down to the first page of the
-      # document (page 1), or until there's already another value saved for a
-      # previous page.
+      # save the value for the specified page and also fill any page gaps with
+      # the latest previous value submitted.
       #
       # Example:
       #
@@ -43,10 +42,11 @@ module Prawn
       # override these values.
       #
       def store_value_in_page(key, value, page = page_number)
-        page.downto(1).each do |page_index|
-          next if repeater_values(key).keys.include?(page_index)
-          repeater_values(key)[page_index] = value
+        latest_value = value_in_page(key, page) # Gets the last value submitted
+        (page - 1).downto(max_index(page)).each do |page_index|
+          repeater_values(key)[page_index] = latest_value
         end
+        repeater_values(key)[page] = value
       end
 
       # Returns the value for a key at a specific page. If the page is greater
@@ -72,7 +72,7 @@ module Prawn
       private
 
       def max_index(key)
-        repeater_values(key).keys.max
+        repeater_values(key).keys.max.to_i
       end
 
       def repeater_values(key)

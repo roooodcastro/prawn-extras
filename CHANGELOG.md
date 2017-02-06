@@ -1,5 +1,13 @@
 # Changelog of prawn-extras
 
+## 0.1.1 (2017-02-06)
+
+### Fixes:
+
+- Fixed typo in dynamic_repeater
+- Fixed logic error in dynamic_repeater
+- Removed unnecessary dependency on Rails
+
 ## 0.1.0 (2016-12-09)
 
 ### What's new:
