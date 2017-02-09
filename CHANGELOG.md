@@ -1,5 +1,11 @@
 # Changelog of prawn-extras
 
+## 0.1.2 (2017-02-09)
+
+### Fixes:
+
+- Fixed wrong parameter in store_value_in_page which caused the wrong values to be stored and thus defeated the whole purpose of the helper
+
 ## 0.1.1 (2017-02-06)
 
 ### Fixes:

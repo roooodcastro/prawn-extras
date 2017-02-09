@@ -43,7 +43,7 @@ module Prawn
       #
       def store_value_in_page(key, value, page = page_number)
         latest_value = value_in_page(key, page) # Gets the last value submitted
-        (page - 1).downto(max_index(page)).each do |page_index|
+        (page - 1).downto(max_index(key)).each do |page_index|
           repeater_values(key)[page_index] = latest_value
         end
         repeater_values(key)[page] = value
