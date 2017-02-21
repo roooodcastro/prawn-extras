@@ -156,8 +156,9 @@ module Prawn
       def position_below(origin_box, gutter = 0)
         correct_origin = Array(origin_box).first
         return top_left if correct_origin.nil?
-        diff = [-@margin[1], -gutter.to_f - @margin[2]]
-        sum_dimensions(correct_origin.absolute_bottom_left, diff)
+        left = correct_origin.absolute_left - bounds.anchor[0]
+        bottom = correct_origin.anchor[1] - bounds.anchor[1]
+        [left, bottom - gutter.to_f]
       end
 
       protected

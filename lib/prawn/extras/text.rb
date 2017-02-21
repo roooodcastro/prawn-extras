@@ -93,6 +93,7 @@ module Prawn
       def titled_text(title, text, options = {})
         style = options.delete(:styles) || [:bold]
         title_options = { styles: style, text: "#{t(title)}: " }
+        title_options[:color] = options.delete(:color)
         formatted_text_box([title_options, { text: t(text) }], options)
       end
 
