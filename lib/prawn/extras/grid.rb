@@ -2,7 +2,7 @@ module Prawn
   module Extras
     # Módulo para gerar um grid de células de tamanhos definidos. Parecido com uma
     # tabela HTML, mas com maior facilidade e flexibilidade para fazer colspans.
-
+    #
     # Não deve ser usado para dados tabulares, para isso deve-se usar o Prawn Table.
     #
     # O método gerar grid gera um grid com o número de linhas e colunas passados nos

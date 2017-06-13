@@ -42,6 +42,12 @@ module Prawn
         switch_font(options.merge(style: :italic), &block)
       end
 
+      # Sets the font to the same as before, but applying the bold-italic style.
+      # All options from set_font may also be used here.
+      def bold_italic_font(options = {}, &block)
+        switch_font(options.merge(style: :bold_italic), &block)
+      end
+
       # Transactionally changes the fill color, rolling back the previous color
       # when the block exits.
       def save_color(new_color)

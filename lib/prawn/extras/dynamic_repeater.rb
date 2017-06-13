@@ -1,31 +1,40 @@
 module Prawn
   module Extras
-    # ==============================================================================
+    # ==========================================================================
     #
-    # Esse módulo contém helpers para facilitar a inserção de conteúdo dinâmico
-    # em repeaters que são dinâmicos.
+    # This module contains helpers that alleviate the problem of inserting
+    # dynamic content (content that changes on each page) inside dynamic
+    # repeaters. This is needed because dynamic repeaters are only evaluated
+    # after all pages are generated, so you cannot assign a value to a variable
+    # on each page and use this same value in the repeater (it will only give
+    # you the value for the last page).
     #
-    # Esses métodos controlam um hash de valores mapeados pelo número da página.
-    # Utilizar esse repeater_values é necessário, pois ao contrário do repeater
-    # normal, que o Prawn renderiza na hora e mantém o mesmo até o final, com o
-    # repeater dinâmico ele deixa para renderizá-lo no final de tudo, por isso
-    # se o valor de alguma variável mudar no meio da geração do relatório, o
-    # repeater dinâmico não terá acesso ao valor anterior.
-
-    # Exemplo de utilização: Deseja-se agrupar alunos por curso, e cada vez que
-    # o curso muda há uma quebra de página, de forma que o nome do curso deve
-    # ser impresso no cabeçalho do relatório, sempre o curso do grupo atual de
-    # alunos.
+    # The 2 methods below use a hash that maps custom values to each
+    # page_number, so you can fill this hash during pages generation, and then
+    # later read the values during repeater evaluation.
     #
-    # Nesse caso, no cabeçalho terá algo do tipo:
-    # 'text(valor_na_pagina(:nome_curso, page_number))'
+    # As an example, suppose you have the models Post and Comment for a blog.
+    # You now need to generate a PDF that lists all comments for each post,
+    # printing the post title in a header that repeats on every page.
+    # Each post may have hundreds of comments, so you don't know beforehand how
+    # many pages each post will use, and thus cannot know in which pages you
+    # need to print the title for post X or post Y. To solve this, simply use:
     #
-    # E, dentro do '.each' que itera sobre os cursos, algo do tipo:
-    # cursos.each do |curso|
-    #   start_new_line
-    #   set_valor_na_pagina(:nome_curso, curso, page_number)
-    #   /* Tabela de alunos */
-    # end
+    # When you first iterate over the posts:
+    #
+    #   posts.each_with_index do |post, index|
+    #     start_new_page unless index == 0
+    #     store_value_in_page('post_title', post.title)
+    #     print_list_of_comments_that_may_span_more_than_one_page
+    #   end
+    #
+    # And finally, when you're inside a dynamic repeater and need to print the
+    # post's title (we use the page_number helper provided by Prawn::Document):
+    #
+    #   repeater(dynamic: true) do
+    #     print_static_header_stuff
+    #     text(value_in_page('post_title', page_number))
+    #   end
     #
     # ==========================================================================
     module DynamicRepeater
