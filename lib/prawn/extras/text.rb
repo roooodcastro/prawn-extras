@@ -1,5 +1,8 @@
+# frozen_string_literal: true
 module Prawn
   module Extras
+    # This module includes helpers to switch between fonts and to print special
+    # text.
     module Text
       # Changes the font family, style, size and leading. When a block is used,
       # the font is applied transactionally and is rolled back when the block

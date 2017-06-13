@@ -1,5 +1,7 @@
+# frozen_string_literal: true
 module Prawn
   module Extras
+    # This module includes helpers to aid font management in Prawn.
     module Font
       # Adds new fonts to the Prawn available fonts. By just passing the font
       # family name, this will try to load all available font styles. The file
@@ -27,16 +29,14 @@ module Prawn
           bold:        external_font_filepath(family, :bold, ext),
           italic:      external_font_filepath(family, :italic, ext),
           bold_italic: external_font_filepath(family, :bold_italic, ext),
-          normal:      external_font_filepath(family, :normal, ext),
+          normal:      external_font_filepath(family, :normal, ext)
         }
       end
 
-      def remove_nonexistent_font_styles(family_hash)
-        family_hash.delete(:bold) unless File.exists?(family_hash[:bold])
-        family_hash.delete(:italic) unless File.exists?(family_hash[:italic])
-        unless File.exists?(family_hash[:bold_italic])
-          family_hash.delete(:bold_italic)
-        end
+      def remove_nonexistent_font_styles(fam_hash)
+        fam_hash.delete(:bold) unless File.exist?(fam_hash[:bold])
+        fam_hash.delete(:italic) unless File.exist?(fam_hash[:italic])
+        fam_hash.delete(:bold_italic) unless File.exist?(fam_hash[:bold_italic])
       end
 
       def external_font_filepath(family, style, extension)

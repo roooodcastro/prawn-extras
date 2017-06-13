@@ -1,13 +1,19 @@
+# frozen_string_literal: true
 module Prawn
   module Extras
-    # Módulo para gerar um grid de células de tamanhos definidos. Parecido com uma
+    # Mpdulo para gerar um grid de celulas de tamanhos definidos. Parecido com
+    # uma
     # tabela HTML, mas com maior facilidade e flexibilidade para fazer colspans.
     #
-    # Não deve ser usado para dados tabulares, para isso deve-se usar o Prawn Table.
+    # Nao deve ser usado para dados tabulares, para isso deve-se usar o Prawn
+    # Table.
     #
-    # O método gerar grid gera um grid com o número de linhas e colunas passados nos
-    # parâmetros. O tamanho será 100% do bounding_box que ele se encontra, exceto
-    # quando houver um padding, nesse caso o tamanho será o do box menos o padding.
+    # O metodo gerar grid gera um grid com o numero de linhas e colunas passados
+    # nos
+    # parametros. O tamanho sera 100% do bounding_box que ele se encontra,
+    # exceto
+    # quando houver um padding, nesse caso o tamanho sera o do box menos o
+    # padding.
     #
     # Para gerar um grid de, por exemplo, 4 colunas e 3 linhas, chame:
     #
@@ -15,15 +21,19 @@ module Prawn
     #     campo_grid(linha, coluna, titulo, texto)
     #   end
     #
-    # Para gerar cada célula individualmente, use o método campo_grid ou os métodos
-    # derivados desse. O parâmetro linha é a linha do grid aonde o campo vai ficar,
-    # e o parâmetro colunas pode ser tanto um número quando um array com 2
-    # elementos. Se for um número, a coluna vai ser a do número, mas se for um
-    # array, como por exemplo [0, 2], significa que a célula vai ocupar as colunas
-    # 0, 1 e 2 da linha selecionada. Isso é equivalente ao colspan do HTML.
+    # Para gerar cada celula individualmente, use o metodo campo_grid ou os
+    # metodos
+    # derivados desse. O parametro linha e a linha do grid aonde o campo vai
+    # ficar,
+    # e o parametro colunas pode ser tanto um numero quando um array com 2
+    # elementos. Se for um numero, a coluna vai ser a do numero, mas se for um
+    # array, como por exemplo [0, 2], significa que a celula vai ocupar as
+    # colunas
+    # 0, 1 e 2 da linha selecionada. Isso e equivalente ao colspan do HTML.
     #
-    # Ilustração de um grid de 4 colunas, 3 linhas com um padding de, por exemplo,
-    # 10pt (para exemplificar, digamos que 10pt = 1 linha de comentário):
+    # Ilustracao de um grid de 4 colunas, 3 linhas com um padding de, por
+    # exemplo,
+    # 10pt (para exemplificar, digamos que 10pt = 1 linha de comentario):
     #
     # Bounding Box:
     # |------------------------------------------------------------------------|
@@ -38,18 +48,20 @@ module Prawn
     # |                                                                        |
     # |------------------------------------------------------------------------|
     #
-    # Exemplos: gerar células no grid acima:
+    # Exemplos: gerar celulas no grid acima:
     #
-    #   campo_grid(0, 1)      ==> Corresponde à Célula 2
+    #   campo_grid(0, 1)      ==> Corresponde a Celula 2
     #   campo_grid(1, [0, 3]) ==> Corresponde a toda a segunda linha
     #
-    # Na hora de gerar o grid, algumas opções podem ser passadas:
+    # Na hora de gerar o grid, algumas opcoes podem ser passadas:
     #
-    # Padding: Adiciona um padding no grid inteiro em relação ao bonding_box que
-    #          contém o grid.
-    # Leading: Usa o leading escolhido no grid. O leading é resetado para o valor
+    # Padding: Adiciona um padding no grid inteiro em relacao ao bonding_box que
+    #          contem o grid.
+    # Leading: Usa o leading escolhido no grid. O leading e resetado para o
+    # valor
     #          anterior quando o grid terminar de ser definido.
-    # Gutter:  O espaço entre as células, em pts. Funciona como o cellspacing da tag
+    # Gutter:  O espaco entre as celulas, em pts. Funciona como o cellspacing
+    # da tag
     #          <table> do HTML.
     module Grid
       include Text
