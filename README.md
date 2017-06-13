@@ -34,15 +34,19 @@ the values previously bound to certain pages with the above method.
 Adds a single method to help add external fonts to Prawn. Default Prawn syntax
 for this is:
 
-    pdf.font_families.update(
-      "MyTrueTypeFamily" => { :bold        => "foo-bold.ttf",
-                              :italic      => "foo-italic.ttf",
-                              :bold_italic => "foo-bold-italic.ttf",
-                              :normal      => "foo.ttf" })
+```ruby
+pdf.font_families.update(
+  "MyTrueTypeFamily" => { :bold        => "foo-bold.ttf",
+                          :italic      => "foo-italic.ttf",
+                          :bold_italic => "foo-bold-italic.ttf",
+                          :normal      => "foo.ttf" })
+```
                               
 The method `create_font_family` turns that into this:
 
-    pdf.create_font_family('MyTrueTypeFamily')
+```ruby
+pdf.create_font_family('MyTrueTypeFamily')
+```
     
 This will try to load the font files from the following paths on the host
 application:
