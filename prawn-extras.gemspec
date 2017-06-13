@@ -19,5 +19,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'prawn'
 
+  s.add_development_dependency 'rspec', '~> 3.6.0'
   s.add_development_dependency 'rubocop'
 end
